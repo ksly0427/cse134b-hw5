@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Custom Dialogs</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="customdialog.js" type="module"></script>
+    </head>
+    <body>
+        <h1>Custom Dialogs</h1>
+        <button id="alert">Alert</button>
+        <button id="confirm">Confirm</button>
+        <button id="prompt">Prompt</button>
+        <hr>
+        <output id="output"></output>
+    
+        <script type="module">
+            import { showDialog } from './customdialog.js';
+
+            const alertButton = document.getElementById('alert');
+            const confirmButton = document.getElementById('confirm');
+            const promptButton = document.getElementById('prompt');
+            const output = document.getElementById('output');
+
+            alertButton.addEventListener('click', async () => {
+                const result = await showDialog("Alert Pressed!", true, false, false);
+                console.log(result);
+            });
+
+            confirmButton.addEventListener('click', async () => {
+                output.innerHTML = '';
+                const result = await showDialog("Do you want to confirm this?", true, true, false);
+                output.textContent = `Confirm result : ${result}`;
+            });
+
+            promptButton.addEventListener('click', async () => {
+                output.innerHTML = '';
+                const result = await showDialog("What is your name?", true, true, true);
+                if(result != false) {
+                    output.innerHTML = `Prompt result : ${result}`;
+                }
+                else {
+                    output.innerHTML = "Prompt result : User did not input anything";
+                }
+                
+            });
+        </script>
+      </body>
+</html>

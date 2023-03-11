@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Styled CRUD</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./crudstyle.css" media="screen"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="styledcrud.js" type="module"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Blog Posts</h1>
+            <button id="addButton">Add Post</button>
+            <hr>
+        </header>
+        <main>
+            <ul id="blog-list">
+            </ul>
+            <output id="output"></output>
+        </main>
+        <script type="module">
+            import {updateList, showDialog} from './styledcrud.js';
+
+            addButton.addEventListener('click', async () => {
+                const result = await showDialog("Create Blog Post", false);
+                if(result) {
+                updateList();
+                }     
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                updateList();
+            });
+        </script>
+    </body>
+</html>

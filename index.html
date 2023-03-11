@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTTRHH737S"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-GTTRHH737S');
+        </script>
+        <meta charset="UTF-8">
+        <title>Kenny Ly</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    </head>
+    <body>
+        <header>
+            <a href="#home">
+                <svg id="logo" width="50" height="50">
+                    <circle cx="25" cy="25" r="25"/>
+                </svg>
+            </a>
+            <nav class="navbar">
+                <input type="checkbox" class="nav-checkbox">
+                <div class="hamburger-lines">
+                    <span class="line" id="line1"></span>
+                    <span class="line" id="line2"></span>
+                    <span class="line" id="line3"></span>
+                </div>
+                <ul class="navbar-items">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+        </header>
+        <main>
+            <section id="home" class="main-content">
+                <p>Hello, world! My name is</p>
+                <h1>Kenny Ly</h1>
+                <h2>Computer Engineering Student at UCSD</h2>
+                <p id="home-intro">I am a software engineer with internship experience working in the Aerospace Defense Industry. I have experience working with Layers 4 to 7 in the OSI model. I also have some limited experience working with embedded systems.</p>
+            </section>
+            <section id="about" class="main-content">
+                <h2>Learn About Me</h2>
+                <div id="about-container">
+                    <div id="about-text">
+                        <p>Hello! My name is Kenny Ly and I am currently a Senior at UC San Diego majoring in Computer Engineering. I will be graduating in June 2023, but I will be returing back to UCSD for my Master's in Computer Engineering in the Fall 2023 Quarter. I am expecting to graduate with my M.S. in June 2024.</p>
+                        <p>I am originally from the San Fernando Valley in Los Angeles, California. For highschool, I attended Granada Hills Charter High School where I was a part of the Academic Decathlon team. I competed on the team that won the <a href="https://www.cbsnews.com/losangeles/news/granada-hills-charter-high-7th-national-decathlon-champ/" target="_blank"><b>2019 United States Academic Decathlon National Championship</b></a>.</p>
+                        <p>I was a Software Engineering Intern at <a href="https://www.avinc.com/" target="_blank"><b>AeroVironment</b></a>, which is an Aerospace Defense Contractor specializing in unmanned aircraft systems, from June to September 2022. I will be returning as an intern again during the Summer before the start of my Master's Degree.</p>
+                    </div>
+                    <picture>
+                        <source srcset="/images/cobblestone.webp">
+                        <img src="/images/cobblestone-min.png" alt="Picture of Kenny in Boston on a cobblestone street">
+                    </picture>
+                    <div id="about-skills">
+                        
+                    </div>
+                </div>
+            </section>
+            <section id="projects" class="main-content">
+                <h2>Projects</h2>
+                <div id="projects-container">
+                    <a href="#projects"><div class="cards">
+                        <h3>Placeholder Project Title</h3>
+                    </div></a>
+                    <a href="#projects"><div class="cards">
+                        <h3>Placeholder Project Title</h3>
+                    </div></a>
+                    <a href="#projects"><div class="cards">
+                        <h3>Placeholder Project Title</h3>
+                    </div></a>
+                    <a href="#projects"><div class="cards">
+                        <h3>Placeholder Project Title</h3>
+                    </div></a>
+                    <a href="#projects"><div class="cards">
+                        <h3>Placeholder Project Title</h3>
+                    </div></a>
+                    <a href="#projects"><div class="cards">
+                        <h3>Placeholder Project Title</h3>
+                    </div></a>
+                </div>
+            </section>
+            <section id="experience" class="main-content">
+                <h2>Experience</h2>
+                <div id="experience-container">
+                    <div class="experience-card">
+                        <h3>Software Engineering Intern | AeroVironment</h3>
+                        <h4>June 2022 - September 2022 | Simi Valley, CA</h4>
+                        <ul>
+                            <li>Developed an application to capture, display, and decode Uplink/Downlink UDP packets between the sbGCS (Switchblade Ground Control Station) and the vehicle in realtime
+                            </li>
+                            <li>Implemented various features for debugging and packet analysis, such as packet filters, realtime packet probe, “Trigger Events”, and save/open “Trigger Events” and captures.</li>
+                            <li>Wrote and published documentation on how to install and use the application. Documentation also describes implementation details for future reference by other developers.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="main-content">
+                <h2>Contact</h2>
+                <form>
+                    <label>Name:
+                        <input class="form-text" type="text" placeholder="Your name...">
+                    </label>
+                    <label>Email:
+                        <input class="form-text" type="text" placeholder="Your name...">
+                    </label>
+                    <label>Message/Question:
+                        <textarea class="form-text" placeholder="Your message/question..."></textarea>
+                    </label>
+                    <input class="form-submit"  type="submit" value="Submit">
+                </form>
+            </section>
+        </main>
+        <footer>
+            <a href="https://github.com/ksly0427" target="_blank">
+                <svg class="footer-icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                    
+                        <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3" />
+                    
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/lykenny/" target="_blank">
+                <svg class="footer-icons" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="51px" height="51px">
+                    
+                    <path d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M10.496,8.403 c0.842,0,1.403,0.561,1.403,1.309c0,0.748-0.561,1.309-1.496,1.309C9.561,11.022,9,10.46,9,9.712C9,8.964,9.561,8.403,10.496,8.403z M12,20H9v-8h3V20z M22,20h-2.824v-4.372c0-1.209-0.753-1.488-1.035-1.488s-1.224,0.186-1.224,1.488c0,0.186,0,4.372,0,4.372H14v-8 h2.918v1.116C17.294,12.465,18.047,12,19.459,12C20.871,12,22,13.116,22,15.628V20z"/>
+                </svg>
+            </a>
+        </footer>
+    </body>
+</html>

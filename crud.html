@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog Posts</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="blog.js" type="module"></script>
+  </head>
+  <body>
+    <h1>Blog Posts</h1>
+    <button id="addButton">Add Post</button>
+    <ul id="blog-list">
+    </ul>
+    <output id="output"></output>
+    <script type="module">
+        import {updateList, showDialog} from './blog.js';
+
+        addButton.addEventListener('click', async () => {
+                const result = await showDialog("Create Blog Post", false);
+                if(result) {
+                    updateList();
+                }     
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            updateList();
+        });
+    </script>
+  </body>
+</html>

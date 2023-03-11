@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Native Dialogs</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+	<h1>Native Dialogs</h1>
+	<button id="alert-button">Alert</button>
+	<button id="confirm-button">Confirm</button>
+	<button id="prompt-button">Prompt</button>
+	<button id="safer-prompt-button">Safer Prompt</button>
+    <hr>
+    <output id="output"></output>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const alertButton = document.getElementById('alert-button');
+            const confirmButton = document.getElementById('confirm-button');
+            const promptButton = document.getElementById('prompt-button');
+            const saferPromptButton = document.getElementById('safer-prompt-button');
+            const output = document.getElementById('output');
+
+            alertButton.addEventListener('click', () => {
+                window.alert('Alert pressed!');
+            });
+
+            confirmButton.addEventListener('click', () => {
+                output.textContent = '';
+                setTimeout(() => {
+                    const result = window.confirm("Do you want to confirm this?");
+                    output.textContent = `Confirm result : ${result}`;
+                }, 0);
+                
+            });
+
+            promptButton.addEventListener('click', () => {
+                output.textContent = '';
+                setTimeout(() => {
+                    const result = window.prompt("What is your name?");
+                    if(result != null && result != '') {
+                        output.innerHTML = `Prompt result : ${result}`;
+                    } else {
+                        output.innerHTML = "Prompt result : User did not enter anything";
+                    }
+                }, 0);
+            });
+
+            saferPromptButton.addEventListener('click', () => {
+                output.textContent = '';
+                setTimeout(() => {
+                    const result = window.prompt("What is your name?");
+                    if(result != null && result != '') {
+                        output.innerHTML = `Prompt result : ${DOMPurify.sanitize(result)}`;
+                    } else {
+                        output.innerHTML = "Prompt result : User did not enter anything";
+                    }
+                }, 0);
+            });
+        });
+    </script>
+</body>
+</html>
