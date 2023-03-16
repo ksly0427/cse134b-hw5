@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Method Test</title>
+        <link rel="stylesheet" href="./simplestyle.css" media="screen">
+    </head>
+    <body>
+        <header>
+            <h2><a href="index.html">&#8592 Go Back</a></h2>
+        </header>
+        <h1>Method Test</h1>
+        <form>
+            <label>ID:
+                <input type="number" id="id">
+            </label>
+            <label>Article Name:
+                <input type="text" id="article_name">
+            </label>
+            <label>Article Body:
+                <textarea id="article_body"></textarea>
+            </label>
+            <label>Request type:
+                <select id="request-type">
+                    <option value="none">Select a HTTP Request type...</option>
+                    <option value="post">POST</option>
+                    <option value="get">GET</option>
+                    <option value="put">PUT</option>
+                    <option value="delete">DELETE</option>
+                </select>
+            </label>
+            <input type="text" id="date" hidden>
+            <button type="button" id="postBtn">POST</button>
+            <button type="button" id="getBtn">GET</button>
+            <button type="button" id="putBtn">PUT</button>
+            <button type="button" id="deleteBtn">DELETE</button>
+        </form>
+        <output id="response"></output>
+        <script type="module">
+            import {handlePost, handleGet, handlePut, handleDelete} from './methodtest.js';
+
+            const postBtn = document.getElementById('postBtn');
+            const getBtn = document.getElementById('getBtn');
+            const putBtn = document.getElementById('putBtn');
+            const deleteBtn = document.getElementById('deleteBtn');
+            const selectEl = document.getElementById('request-type');
+            const nameInput = document.getElementById('article_name');
+            const bodyInput = document.getElementById('article_body');
+
+            document.addEventListener('DOMContentLoaded', () => {
+                postBtn.disabled = true;
+                getBtn.disabled = true;
+                putBtn.disabled = true;
+                deleteBtn.disabled = true;
+            });
+
+            selectEl.addEventListener('change', (event) => {
+                let requestType = event.target.value;
+
+                postBtn.disabled = true;
+                getBtn.disabled = true;
+                putBtn.disabled = true;
+                deleteBtn.disabled = true;
+
+                nameInput.disabled = false;
+                bodyInput.disabled = false;
+
+                if(requestType == 'post') {
+                    postBtn.disabled = false;
+                }
+                else if(requestType == 'get') {
+                    getBtn.disabled = false;
+                }
+                else if(requestType == 'put') {
+                    putBtn.disabled = false;
+                }
+                else if(requestType == 'delete') {
+                    deleteBtn.disabled = false;
+                    nameInput.disabled = true;
+                    bodyInput.disabled = true;
+                }
+            });
+            postBtn.addEventListener('click', handlePost);
+            getBtn.addEventListener('click', handleGet);
+            putBtn.addEventListener('click', handlePut);
+            deleteBtn.addEventListener('click', handleDelete);
+        </script>
+    </body>
+</html>

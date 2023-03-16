@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+:root {
+    --basic-font-family: 'Roboto Slab';
+    --accent-font-family: 'Roboto';
+    
+    --accent-color: #678983;
+    --basic-color: #CEC6B0;
+    --heading-color: #F0E9D2;
+
+    --background-color: #181D31;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--basic-color);
+    font-family: var(--basic-font-family), serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form label{
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    min-width: 25vw;
+    min-height: 25vh;
+}
+
+a {
+    color: var(--basic-color);
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--basic-color);
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--accent-color);
+    transition: color 0.3s ease-in-out;
+}
+
+output {
+    max-width: 50vw;
+}
